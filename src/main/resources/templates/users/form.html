@@ -5,6 +5,18 @@
     <meta charset="UTF-8">
     <title>Thymeleaf in action</title></head>
 <body>
-
+    <div th:replace="~{fragments/header::header}"></div>
+    <h3 th:text="${usermodel.title}"></h3>
+    <form action="/users/save" th:action="@{/users/save}" method="post" th:object="${usermodel.user}">
+        <input type="hidden" name="id" th:value="*{id}">
+        名称：<br>
+        <input type="text" name="name" th:value="*{name}">
+        <br>
+        邮箱：<br>
+        <input type="text" name="email" th:value="*{email}">
+        <input type="submit" value="提交">
+        <type></type>
+    </form>
+    <div th:replace="~{fragments/footer::footer}"></div>
 </body>
 </html>

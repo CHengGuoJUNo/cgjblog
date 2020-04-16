@@ -2,6 +2,7 @@ package com.blog.dao;
 
 import com.blog.domain.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -16,7 +17,7 @@ import java.util.List;
 @Repository
 public interface UserDao {
     //创建用户
-    User save(User user);
+    int save(User user);
     //修改用户
     User update(User user);
     //删除用户

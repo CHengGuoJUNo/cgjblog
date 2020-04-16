@@ -12,7 +12,7 @@ import java.util.List;
  **/
 public interface UserService {
     //创建用户
-    User save(User user);
+    int save(User user);
     //修改用户
     User update(User user);
     //删除用户

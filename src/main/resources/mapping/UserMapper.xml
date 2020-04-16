@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.blog.dao.UserDao">
 
-    <insert id="save" >
-        insert into user(id,name,email)
-        values(#{id},#{name},#{user.email})
+    <insert id="save" parameterType="com.blog.domain.User" useGeneratedKeys="true" keyProperty="id">
+        insert into user(name,email)
+        values(#{name},#{email})
     </insert>
 
     <update id="update" parameterType="com.blog.domain.User">
